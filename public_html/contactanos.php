@@ -147,7 +147,7 @@
 
             <div class="mb-3">
                 <label>Mensaje *</label>
-                <textarea class="form-control" id="message" rows="4" required></textarea>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
                 <small class="error-text"></small>
             </div>
 
