@@ -113,7 +113,7 @@ document.querySelectorAll(".metodo-pago").forEach(btn => {
    ENVÍO FORMULARIO
 ========================= */
 
-document.getElementById("formDonar").addEventListener("submit", function (e) {
+document.getElementById("formulario-monto").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const nombre = limpiarEspacios(document.getElementById("nombre").value);
