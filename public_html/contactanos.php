@@ -228,7 +228,7 @@
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-    <script src="/assets/js/Validaciones.js"></script>
+    <script src="<?php echo URL_BASE; ?>/assets/js/Validaciones.js?v=<?php echo time(); ?>"></script>
 
 
 </body>
