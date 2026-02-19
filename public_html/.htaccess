@@ -1,0 +1,15 @@
+Options -Indexes +FollowSymLinks
+RewriteEngine On
+
+# Evitar que accedan al núcleo
+RewriteRule ^fundacion_core/ - [F,L]
+
+# Forzar HTTPS (Desactiva esto en LOCAL si no usas SSL, o te dará error)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Quitar .php de la URL de forma limpia
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

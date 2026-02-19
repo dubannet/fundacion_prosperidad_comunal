@@ -1,0 +1,9 @@
+Options -Indexes 
+RewriteEngine On
+
+# Ocultar .php en el subdominio
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Si el admin entra a /dashboard, carga /dashboard.php

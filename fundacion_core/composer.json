@@ -1,0 +1,16 @@
+{
+    "name": "duban/fundacion_core",
+    "description": "Nucleo del proyecto fundacion",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "phpmailer/phpmailer": "^7.0",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Config\\": "config/"
+        }
+    }
+}
