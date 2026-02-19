@@ -159,19 +159,21 @@ class MailHelper
     /**
      * Envía un mensaje de contacto al administrador.
      */
-    public function sendContactMessage(string $fromName, string $fromEmail, string $message): bool
+    public function sendContactMessage(string $fromName, string $fromEmail, string $phone, string $subject, string $message): bool
     {
         try {
             $this->mail->clearAddresses();
-            $this->mail->addAddress($_ENV['SMTP_USER'], 'Administrador'); // Tú recibes el correo
-            $this->mail->addReplyTo($fromEmail, $fromName); // Para responderle al usuario directamente
+            $this->mail->addAddress($_ENV['SMTP_USER'], 'Administrador');
+            $this->mail->addReplyTo($fromEmail, $fromName);
 
-            $this->mail->Subject = "Nuevo Mensaje de Contacto - " . $fromName;
-            $this->mail->isHTML(true);
+            $this->mail->Subject = "Nuevo Mensaje de Contacto - " . $subject;
+
             $this->mail->Body = "
             <h2>Nuevo Mensaje de Contacto</h2>
-            <p><strong>De:</strong> " . htmlspecialchars($fromName) . "</p>
-            <p><strong>Email:</strong> " . htmlspecialchars($fromEmail) . "</p>
+            <p><strong>Nombre:</strong> {$fromName}</p>
+            <p><strong>Email:</strong> {$fromEmail}</p>
+            <p><strong>Teléfono:</strong> {$phone}</p>
+            <p><strong>Asunto:</strong> {$subject}</p>
             <hr>
             <p><strong>Mensaje:</strong></p>
             <p>" . nl2br(htmlspecialchars($message)) . "</p>
@@ -179,7 +181,7 @@ class MailHelper
 
             return $this->mail->send();
         } catch (Exception $e) {
-            error_log("Error en MailHelper (Contacto): " . $e->getMessage());
+            error_log("Error en MailHelper (Contacto): " . $this->mail->ErrorInfo);
             return false;
         }
     }
