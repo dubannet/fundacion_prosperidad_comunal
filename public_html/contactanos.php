@@ -118,7 +118,7 @@
 
             <div class="mb-3">
                 <label>Nombre Completo *</label>
-                <input type="text" class="form-control" id="nombre" required>
+                <input type="text" class="form-control" id="name" required>
                 <small class="error-text"></small>
             </div>
 
@@ -130,13 +130,13 @@
 
             <div class="mb-3">
                 <label>Teléfono</label>
-                <input type="text" class="form-control" id="telefono">
+                <input type="text" class="form-control" id="phone">
                 <small class="error-text"></small>
             </div>
 
             <div class="mb-3">
                 <label>Asunto *</label>
-                <select class="form-control" id="asunto" required>
+                <select class="form-control" id="subject" required>
                     <option value="">Selecciona una opción</option>
                     <option>Donaciones</option>
                     <option>Voluntariado</option>
@@ -147,7 +147,7 @@
 
             <div class="mb-3">
                 <label>Mensaje *</label>
-                <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
                 <small class="error-text"></small>
             </div>
 
