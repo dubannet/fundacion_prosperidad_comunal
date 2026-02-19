@@ -114,7 +114,7 @@
         ?>
         <p>Completa el formulario y nos pondremos en contacto contigo.</p>
 
-        <form id="formContacto" novalidate>
+        <form id="formContacto" action="contacto_submit.php" method="POST" novalidate>
 
             <div class="mb-3">
                 <label>Nombre Completo *</label>
