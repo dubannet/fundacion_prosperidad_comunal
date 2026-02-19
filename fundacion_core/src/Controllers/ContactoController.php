@@ -6,33 +6,36 @@ namespace App\Controllers;
 
 use App\Helpers\MailHelper;
 
-class ContactoController {
-    
+class ContactoController
+{
+
     private $mailHelper;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->mailHelper = new MailHelper();
     }
 
-    public function handleContactForm() {
+    public function handleContactForm()
+    {
         // Solo aceptamos POST
         if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-            header("Location: " . URL_BASE . "/contactanos.php"); 
+            header("Location: " . URL_BASE . "/contactanos.php");
             exit;
         }
 
-        // 1. Sanitización
-        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
-        $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+        $name    = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+        $email   = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+        $phone   = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_SPECIAL_CHARS);
+        $subject = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_SPECIAL_CHARS);
         $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        if (!$name || !$email || !$message) {
-            header("Location: " . URL_BASE . "/contactanos.php?status=error_datos"); 
+        if (!$name || !$email || !$subject || !$message) {
+            header("Location: " . URL_BASE . "/contactanos.php?status=error_datos");
             exit;
         }
 
-        // 2. Intentar enviar usando el Helper
-        $sent = $this->mailHelper->sendContactMessage($name, $email, $message);
+        $sent = $this->mailHelper->sendContactMessage($name, $email, $phone, $subject, $message);
 
         if ($sent) {
             header("Location: " . URL_BASE . "/contactanos.php?status=success");
@@ -42,4 +45,3 @@ class ContactoController {
         exit;
     }
 }
-

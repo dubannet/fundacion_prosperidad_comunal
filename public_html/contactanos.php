@@ -118,25 +118,25 @@
 
             <div class="mb-3">
                 <label>Nombre Completo *</label>
-                <input type="text" class="form-control" id="name" required>
+                <input type="text" class="form-control" id="name" name="name" required>
                 <small class="error-text"></small>
             </div>
 
             <div class="mb-3">
                 <label>Correo Electrónico *</label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" class="form-control" id="email" name="email" required>
                 <small class="error-text"></small>
             </div>
 
             <div class="mb-3">
                 <label>Teléfono</label>
-                <input type="text" class="form-control" id="phone">
+                <input type="text" class="form-control" id="phone" name="phone">
                 <small class="error-text"></small>
             </div>
 
             <div class="mb-3">
                 <label>Asunto *</label>
-                <select class="form-control" id="subject" required>
+                <select class="form-control" id="subject" name="subject" required>
                     <option value="">Selecciona una opción</option>
                     <option>Donaciones</option>
                     <option>Voluntariado</option>
