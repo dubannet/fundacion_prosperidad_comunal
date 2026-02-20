@@ -146,7 +146,76 @@ if (!$proyecto_id) {
 
         <?php endif; ?>
     </main>
+    <!-- ========================= BOTÓN VOLVER ========================= -->
+    <div class="text-center my-5">
+        <a href="index" class="btn btn-primary-custom">
+            <i class="fa-solid fa-arrow-left"></i> Volver al inicio
+        </a>
+    </div>
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
 
+                <!-- CONTACTO -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Contacto</h5>
+
+                    <p>
+                        <i class="bi bi-geo-alt"></i>
+                        <a class="footer-link"
+                            href="https://www.google.com/maps/search/?api=1&query=Calle+11f+%231c+66+Malambo+Atlantico"
+                            target="_blank" rel="noopener noreferrer">
+                            Calle 11f # 1c 66 Malambo, Atlántico
+                        </a>
+                    </p>
+                    <p><i class="bi bi-telephone"></i> +57 302 2861822</p>
+                    <p><i class="bi bi-envelope"></i> . Fundaciónprosperidadcomunal@gmail.com</p>
+                    <a href="contactanos" class="btn btn-donar">
+                        Contactanos ahora
+                    </a>
+                </div>
+
+                <!-- SOBRE NOSOTROS -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Sobre Nosotros</h5>
+                    <p>
+                        Fundación Prosperidad Comunal trabaja por el bienestar y desarrollo
+                        integral de comunidades vulnerables.
+                    </p>
+                </div>
+
+                <!-- REDES SOCIALES -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Redes Sociales</h5>
+
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61583813890771&locale=es_LA"><i
+                                class="bi bi-facebook"></i></a>
+
+                        <a
+                            href="https://api.whatsapp.com/send?phone=%2B573022861822&fbclid=IwY2xjawOmBnxleHRuA2FlbQIxMABicmlkETF3Y2pSSzVXV1VDR2tlQWpoc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvPYQFECXks4ijNb60v3PWQVV6Xek4oT7l8280_Kl2BanDWTh-lqhaPPSZsc_aem_i-AZoMlbM6lRky-b3H-fyA"><i
+                                class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>
+                © <span id="year"></span> Fundación Prosperidad Comunal.
+                Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
     <script>
         function cambiarImagen(elemento) {
             document.getElementById("imgPrincipal").src = elemento.src;
