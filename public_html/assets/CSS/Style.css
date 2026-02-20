@@ -1,5 +1,7 @@
 /* ========================= GENERAL ========================= */
-
+*{
+    box-sizing: border-box;
+}
 body {
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
@@ -743,7 +745,7 @@ body {
 }
 
 /* Sobre el proyecto */
-/*.sobre-proyecto h3 {
+.sobre-proyecto h3 {
   font-size: 28px;
   margin-bottom: 14px;
   font-weight: 700;
@@ -754,15 +756,6 @@ body {
   line-height: 1.7;
   color: #333;
   margin-bottom: 16px;
-}*/
-#sobreContenido {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-#sobreContenido p {
-    word-break: break-word;
-    overflow-wrap: anywhere;
 }
 /* Caja azul de donación */
 .donar-box {
