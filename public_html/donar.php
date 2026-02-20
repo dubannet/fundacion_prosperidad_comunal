@@ -39,25 +39,26 @@ if ($proyectoId) {
     <!-- ========================= HEADER ========================= -->
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="inicio.html">
-                <img src="assets/img/log1.png" alt="Logo" class="logo">
-                <span class="brand-text">
+            <a class="navbar-brand d-flex align-items-center" href="index">
+                <img src="assets/img/log1.png" class="logo" alt="Logo Fundación">
+                <div class="brand-text ms-2">
                     <span class="brand-title">Fundación Prosperidad</span>
                     <span class="brand-subtitle">Comunal</span>
-                </span>
+                </div>
             </a>
 
-            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-end" id="menu">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link menu-link" href="index">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link menu-link" href="nosotros">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link menu-link" href="proyectos">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link menu-link" href="donar">Donar</a></li>
                     <li class="nav-item"><a class="nav-link menu-link" href="contactanos">Contacto</a></li>
+
                 </ul>
             </div>
         </div>

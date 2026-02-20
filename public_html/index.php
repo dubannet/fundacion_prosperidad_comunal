@@ -6,10 +6,10 @@ require_once __DIR__ . '/../fundacion_core/config/bootstrap.php';
 use App\Models\Proyecto;
 
 $proyectos = [];
-$error_message = null; 
+$error_message = null;
 try {
     $proyectoModel = new Proyecto();
-    $proyectos = $proyectoModel->findAllActive(); 
+    $proyectos = $proyectoModel->findAllActive();
 } catch (\Exception $e) {
     error_log("Error al cargar proyectos: " . $e->getMessage());
     $error_message = 'No pudimos cargar los proyectos en este momento. Inténtalo más tarde.';
@@ -37,24 +37,26 @@ try {
 
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#inicio">
+            <a class="navbar-brand d-flex align-items-center" href="index">
                 <img src="assets/img/log1.png" class="logo" alt="Logo Fundación">
                 <div class="brand-text ms-2">
-                    <span class="brand-title">Fundación Prosperidad</span><br>
+                    <span class="brand-title">Fundación Prosperidad</span>
                     <span class="brand-subtitle">Comunal</span>
                 </div>
             </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li><a class="menu-link nav-link" href="#inicio">Inicio</a></li>
-                    <li><a class="menu-link nav-link" href="#nosotros">Nosotros</a></li>
-                    <li><a class="menu-link nav-link" href="#proyectos">Proyectos</a></li>
-                    <li><a class="menu-link nav-link" href="#donar">Donar</a></li>
-                    <li><a class="menu-link nav-link" href="contactanos">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="index">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="donar">Donar</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="contactanos">Contacto</a></li>
+
                 </ul>
             </div>
         </div>
