@@ -123,7 +123,9 @@ if (!$proyecto_id) {
             <!-- Sobre el proyecto -->
             <section class="sobre-proyecto mt-5">
                 <h3>Sobre el Proyecto</h3>
-                <p><?php echo nl2br(htmlspecialchars($proyecto['descripcion'])); ?></p>
+                <div id="sobreContenido">
+                    <p><?php echo nl2br(htmlspecialchars($proyecto['descripcion'])); ?></p>
+                </div>
             </section>
 
             <!-- Caja donar -->
