@@ -1,42 +1,4 @@
 
-  const PROJECTS = {
-    educacion: {
-      title: "Educación Transformadora",
-      estado: "enprogreso", // enprogreso | pendiente | finalizado
-      main: "https://images.unsplash.com/photo-1761048370427-494e01030f97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGVkdWNhdGlvbiUyMGNvbW11bml0eXxlbnwxfHx8fDE3NjQwNDE3Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      thumbs: ["assets/img/edu1.jpeg","assets/img/edu2.jpeg","assets/img/edu3.jpeg"],
-      paragraphs: [
-        "Nuestra iniciativa Educación Transformadora trabaja con niños y adolescentes en situaciones de vulnerabilidad para ofrecer apoyo escolar y talleres formativos.",
-        "Creamos espacios seguros de aprendizaje y acompañamiento, orientados a mejorar las oportunidades académicas y personales.",
-        "Colaboramos con escuelas, voluntarios y aliados para dar sostenibilidad a nuestras acciones."
-      ],
-      
-    },
-    desarrollo: {
-      title: "Desarrollo Comunitario",
-      estado: "enprogreso",
-      main: "assets/img/desarrollo_main.jpg",
-      thumbs: ["assets/img/desarrollo_1.jpg","assets/img/desarrollo_2.jpg","assets/img/desarrollo_3.jpg"],
-      paragraphs: [
-        "El Desarrollo Comunitario es el corazón de nuestra misión. Trabajamos para fortalecer el tejido social y promover oportunidades para las familias.",
-        "A través de talleres, encuentros y proyectos productivos impulsamos capacidades locales y fomentamos la autonomía.",
-        "Buscamos soluciones sostenibles que permitan mejorar condiciones de vida y crear redes de apoyo permanentes."
-      ],
-      
-    },
-    juventud: {
-      title: "Juventud con Futuro",
-      estado: "pendiente",
-      main: "assets/img/juventud_main.jpg",
-      thumbs: ["assets/img/juventud_1.jpg","assets/img/juventud_2.jpg","assets/img/juventud_3.jpg"],
-      paragraphs: [
-        "Juventud con Futuro ofrece talleres de formación técnica y liderazgo para jóvenes de la comunidad.",
-        "Fomentamos habilidades laborales y proyectos juveniles que permitan nuevas oportunidades.",
-        "Trabajamos con empresas y mentores para crear puentes hacia el empleo y el emprendimiento."
-      ],
-     
-    }
-  };
 
   // util: get project key from URL (?project=desarrollo) default 'desarrollo'
   function getProjectKey(){
