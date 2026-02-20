@@ -93,7 +93,7 @@ document.querySelectorAll(".monto-btn").forEach(btn => {
     btn.addEventListener("click", function () {
         document.querySelectorAll(".monto-btn").forEach(b => b.classList.remove("active"));
         this.classList.add("active");
-        document.getElementById("monto").value = this.dataset.valor;
+        document.getElementById("montoDonacion").value = this.dataset.valor;
     });
 });
 
@@ -101,13 +101,13 @@ document.querySelectorAll(".monto-btn").forEach(btn => {
    MÉTODO DE PAGO
 ========================= */
 
-document.querySelectorAll(".metodo-pago").forEach(btn => {
+/*document.querySelectorAll(".metodo-pago").forEach(btn => {
     btn.addEventListener("click", function () {
         document.querySelectorAll(".metodo-pago").forEach(b => b.classList.remove("active"));
         this.classList.add("active");
         document.getElementById("metodo").value = this.dataset.metodo;
     });
-});
+});*/
 
 /* =========================
    ENVÍO FORMULARIO
@@ -161,7 +161,7 @@ document.getElementById("formulario-monto").addEventListener("submit", function 
 
 
 /* =========================
-   CAPTURAR PROYECTO EN DONAR.HTML
+   CAPTURAR PROYECTO EN DONAR.PHP
 ========================= */
 
 document.addEventListener("DOMContentLoaded", function () {
