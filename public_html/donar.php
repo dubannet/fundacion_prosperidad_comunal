@@ -89,22 +89,22 @@ if ($proyectoId) {
 
             <div class="row g-3 mb-3">
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="10">$10,000</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="10000">$10,000</button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="25">$25,000</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="25000">$25,000</button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="50">$50,000</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="50000">$50,000</button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="100">$100,000</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="100000">$100,000</button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="250">$250,000</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="250000">$250,000</button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="500">$500,000</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="500000">$500,000</button>
                 </div>
             </div>
 
@@ -226,7 +226,7 @@ if ($proyectoId) {
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="Validaciones.js"></script>
+    <script src="<?php echo URL_BASE; ?>/assets/js/Validaciones.js?v=<?php echo time(); ?>"></script>
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>

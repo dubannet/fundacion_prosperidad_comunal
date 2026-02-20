@@ -10,71 +10,8 @@ function limpiarEspacios(valor) {
    VALIDACIONES BÁSICAS
 ========================= */
 
-function validarNoVacio(valor) {
-    return valor.trim().length > 0;
-}
-
 function validarLongitud(valor, min, max) {
     return valor.length >= min && valor.length <= max;
-}
-
-/* =========================
-   PROTECCIÓN BÁSICA (UX)
-========================= */
-
-function validarCaracteresPeligrosos(texto) {
-    const patron = /['";<>]/g;
-    return !patron.test(texto);
-}
-
-function validarPalabrasSQL(texto) {
-    const sqlKeywords = [
-        "select","insert","delete","update","drop",
-        "truncate","alter","union","exec","xp_"
-    ];
-
-    const lower = texto.toLowerCase();
-    return !sqlKeywords.some(keyword => lower.includes(keyword));
-}
-
-function validarSQL(texto) {
-    return validarCaracteresPeligrosos(texto) && validarPalabrasSQL(texto);
-}
-
-/* =========================
-   PROTECCIÓN XSS (UX)
-========================= */
-
-function validarXSS(texto) {
-    const patron = /<[^>]*>/g;
-    return !patron.test(texto);
-}
-
-/* =========================
-   VALIDACIONES DE CAMPOS
-========================= */
-
-function validarNombre(nombre) {
-    const patron = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{2,50}$/;
-    return patron.test(nombre);
-}
-
-function validarEmail(email) {
-    const patron = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return patron.test(email);
-}
-
-function validarTelefono(tel) {
-    const patron = /^[0-9]{7,15}$/;
-    return patron.test(tel);
-}
-
-function validarTextoLargo(texto) {
-    return (
-        validarLongitud(texto, 1, 500) &&
-        validarSQL(texto) &&
-        validarXSS(texto)
-    );
 }
 
 /* =========================
@@ -82,89 +19,60 @@ function validarTextoLargo(texto) {
 ========================= */
 
 function validarMonto(monto) {
-    return !isNaN(monto) && monto > 0;
+    return !isNaN(monto) && Number(monto) > 0;
 }
 
 /* =========================
-   BOTONES MONTO
-========================= */
-
-document.querySelectorAll(".monto-btn").forEach(btn => {
-    btn.addEventListener("click", function () {
-        document.querySelectorAll(".monto-btn").forEach(b => b.classList.remove("active"));
-        this.classList.add("active");
-        document.getElementById("montoDonacion").value = this.dataset.valor;
-    });
-});
-
-/* =========================
-   MÉTODO DE PAGO
-========================= */
-
-/*document.querySelectorAll(".metodo-pago").forEach(btn => {
-    btn.addEventListener("click", function () {
-        document.querySelectorAll(".metodo-pago").forEach(b => b.classList.remove("active"));
-        this.classList.add("active");
-        document.getElementById("metodo").value = this.dataset.metodo;
-    });
-});*/
-
-/* =========================
-   ENVÍO FORMULARIO
-========================= */
-
-document.getElementById("formulario-monto").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    //const nombre = limpiarEspacios(document.getElementById("name").value);
-    //const email = limpiarEspacios(document.getElementById("email").value);
-    //const telefono = limpiarEspacios(document.getElementById("phone").value);
-    //const mensaje = limpiarEspacios(document.getElementById("message").value);
-    const monto = document.getElementById("montoDonacion").value;
-    //const metodo = document.getElementById("metodo").value;
-
-    if (!validarMonto(monto)) {
-        alert("Selecciona un monto válido");
-        return;
-    }
-    /*
-    if (!metodo) {
-        alert("Selecciona un método de pago");
-        return;
-    }
-
-    if (!validarNombre(nombre)) {
-        alert("Nombre inválido");
-        return;
-    }
-
-    if (!validarEmail(email)) {
-        alert("Correo electrónico inválido");
-        return;
-    }
-
-    if (telefono && !validarTelefono(telefono)) {
-        alert("Teléfono inválido");
-        return;
-    }
-
-    if (mensaje && !validarTextoLargo(mensaje)) {
-        alert("Mensaje inválido");
-        return;
-    }
-    */
-    alert("Formulario validado correctamente");
-
-    // Aquí conectar pasarela de pago
-    // this.submit();
-});
-
-
-/* =========================
-   CAPTURAR PROYECTO EN DONAR.PHP
+   CUANDO EL DOM ESTÁ LISTO
 ========================= */
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================
+       BOTONES MONTO
+    ========================= */
+
+    const botonesMonto = document.querySelectorAll(".monto-btn");
+    const inputMonto = document.getElementById("montoDonacion");
+
+    botonesMonto.forEach(btn => {
+        btn.addEventListener("click", function () {
+
+            // quitar clase activa a todos
+            botonesMonto.forEach(b => b.classList.remove("active"));
+
+            // activar el seleccionado
+            this.classList.add("active");
+
+            // colocar valor en input
+            inputMonto.value = this.dataset.valor;
+        });
+    });
+
+
+    /* =========================
+       ENVÍO FORMULARIO
+    ========================= */
+
+    const formulario = document.getElementById("formulario-monto");
+
+    formulario.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const monto = inputMonto.value;
+
+        if (!validarMonto(monto)) {
+            alert("Selecciona un monto válido");
+            return;
+        }
+
+
+    });
+
+
+    /* =========================
+       CAPTURAR PROYECTO EN URL
+    ========================= */
 
     const params = new URLSearchParams(window.location.search);
     const project = params.get("project");
@@ -190,12 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
-        const form = document.getElementById("formDonar");
+        const form = document.getElementById("formulario-monto");
 
         if (form) {
             form.parentNode.insertBefore(titulo, form);
         }
-
     }
 
 });
