@@ -89,22 +89,22 @@ if ($proyectoId) {
 
             <div class="row g-3 mb-3">
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="10">$10k</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="10">$10,000</button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="25">$25k</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="25">$25,000</button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="50">$50k</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="50">$50,000</button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="100">$100k</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="100">$100,000</button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="250">$250k</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="250">$250,000</button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="500">$500k</button>
+                    <button type="button" class="btn btn-outline-primary w-100 monto-btn" data-valor="500">$500,000</button>
                 </div>
             </div>
 

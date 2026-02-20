@@ -116,18 +116,18 @@ document.querySelectorAll(".monto-btn").forEach(btn => {
 document.getElementById("formulario-monto").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const nombre = limpiarEspacios(document.getElementById("nombre").value);
-    const email = limpiarEspacios(document.getElementById("email").value);
-    const telefono = limpiarEspacios(document.getElementById("telefono").value);
-    const mensaje = limpiarEspacios(document.getElementById("mensaje").value);
-    const monto = document.getElementById("monto").value;
-    const metodo = document.getElementById("metodo").value;
+    //const nombre = limpiarEspacios(document.getElementById("name").value);
+    //const email = limpiarEspacios(document.getElementById("email").value);
+    //const telefono = limpiarEspacios(document.getElementById("phone").value);
+    //const mensaje = limpiarEspacios(document.getElementById("message").value);
+    const monto = document.getElementById("montoDonacion").value;
+    //const metodo = document.getElementById("metodo").value;
 
     if (!validarMonto(monto)) {
         alert("Selecciona un monto válido");
         return;
     }
-
+    /*
     if (!metodo) {
         alert("Selecciona un método de pago");
         return;
@@ -152,7 +152,7 @@ document.getElementById("formulario-monto").addEventListener("submit", function 
         alert("Mensaje inválido");
         return;
     }
-
+    */
     alert("Formulario validado correctamente");
 
     // Aquí conectar pasarela de pago
