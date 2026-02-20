@@ -42,4 +42,5 @@ define('UPLOAD_DIR_PATH', BASE_PATH . '/shared_uploads/');
 //define('URL_UPLOADS', 'http://fundacion.local/uploads/');
 
 // Cambia 'fundacion.org' por tu dominio real o 'localhost/subdominio/public_html'
-define('URL_UPLOADS', 'localhost/subdominio/public_html/uploads/');
+//define('URL_UPLOADS', 'localhost/subdominio/public_html/uploads/');
+define('URL_UPLOADS', URL_BASE . '/uploads/');
