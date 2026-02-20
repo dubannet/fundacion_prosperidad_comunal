@@ -1,7 +1,5 @@
 /* ========================= GENERAL ========================= */
-*{
-    box-sizing: border-box;
-}
+
 body {
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
